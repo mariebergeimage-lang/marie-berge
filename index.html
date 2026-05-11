@@ -1,0 +1,1058 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marie Bergé — Conseillère en Image & Confiance en Soi</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --rouge: #C0392B;
+    --rouge-deep: #8B1A1A;
+    --rouge-light: #E8534A;
+    --or: #C9A84C;
+    --or-light: #E8C97A;
+    --vert: #2D5016;
+    --vert-light: #4A7C2F;
+    --creme: #FAF6F0;
+    --creme-dark: #F0E8DC;
+    --brun: #3D2014;
+    --blanc: #FFFFFF;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Jost', sans-serif;
+    background: var(--creme);
+    color: var(--brun);
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 1.2rem 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(250, 246, 240, 0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(201, 168, 76, 0.2);
+  }
+
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--rouge-deep);
+    letter-spacing: 0.05em;
+  }
+
+  .nav-logo span {
+    color: var(--or);
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    color: var(--brun);
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    transition: color 0.3s;
+  }
+
+  .nav-links a:hover { color: var(--rouge); }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 70px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -100px; right: -100px;
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(192,57,43,0.08) 0%, transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
+  .hero-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem 3rem;
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .hero-eyebrow {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--or);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+  }
+
+  .hero-eyebrow::before {
+    content: '';
+    display: block;
+    width: 30px;
+    height: 1px;
+    background: var(--or);
+  }
+
+  .hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3rem, 5vw, 4.5rem);
+    font-weight: 300;
+    line-height: 1.1;
+    color: var(--brun);
+    margin-bottom: 0.5rem;
+  }
+
+  .hero-title em {
+    font-style: italic;
+    color: var(--rouge);
+  }
+
+  .hero-title .name {
+    font-weight: 600;
+    display: block;
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    color: var(--rouge-deep);
+    margin-top: 0.3rem;
+  }
+
+  .hero-subtitle {
+    font-size: 0.85rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--or);
+    margin-bottom: 2rem;
+    font-weight: 400;
+  }
+
+  .hero-desc {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.25rem;
+    font-weight: 300;
+    font-style: italic;
+    line-height: 1.7;
+    color: var(--brun);
+    opacity: 0.85;
+    max-width: 580px;
+    margin: 0 auto 2.5rem;
+    border-left: none;
+    border-top: 1px solid var(--or);
+    border-bottom: 1px solid var(--or);
+    padding: 1rem 0;
+  }
+
+  .hero-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    background: var(--rouge);
+    color: var(--blanc);
+    text-decoration: none;
+    padding: 1rem 2.5rem;
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    width: fit-content;
+  }
+
+  .hero-cta::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--rouge-deep);
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+  }
+
+  .hero-cta:hover::before { transform: translateX(0); }
+  .hero-cta span { position: relative; z-index: 1; }
+
+
+
+  .gold-line {
+    position: absolute;
+    bottom: 3rem;
+    left: -2rem;
+    width: 120px;
+    height: 2px;
+    background: var(--or);
+    z-index: 3;
+  }
+
+  /* CITATION */
+  .citation-band {
+    background: var(--rouge-deep);
+    padding: 3rem 5rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .citation-band::before {
+    content: '❝';
+    position: absolute;
+    font-size: 15rem;
+    color: rgba(255,255,255,0.03);
+    font-family: 'Cormorant Garamond', serif;
+    top: -3rem; left: 2rem;
+    line-height: 1;
+  }
+
+  .citation-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.4rem, 2.5vw, 2rem);
+    font-weight: 300;
+    font-style: italic;
+    color: var(--creme);
+    line-height: 1.6;
+    max-width: 750px;
+    margin: 0 auto 1rem;
+  }
+
+  .citation-author {
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--or-light);
+    font-weight: 500;
+  }
+
+  /* ABOUT */
+  .about {
+    padding: 7rem 5rem;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 5rem;
+    align-items: center;
+  }
+
+  .section-label {
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--or);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+
+  .section-label::before {
+    content: '';
+    display: block;
+    width: 25px;
+    height: 1px;
+    background: var(--or);
+  }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.2rem, 3.5vw, 3rem);
+    font-weight: 300;
+    line-height: 1.2;
+    color: var(--brun);
+    margin-bottom: 1.5rem;
+  }
+
+  .section-title em {
+    font-style: italic;
+    color: var(--rouge);
+  }
+
+  .about-text p {
+    font-size: 0.95rem;
+    line-height: 1.9;
+    color: var(--brun);
+    opacity: 0.8;
+    margin-bottom: 1rem;
+  }
+
+  .about-visual {
+    position: relative;
+  }
+
+  .about-card {
+    background: var(--blanc);
+    border: 1px solid rgba(201, 168, 76, 0.3);
+    padding: 2.5rem;
+    position: relative;
+  }
+
+  .about-card::before {
+    content: '';
+    position: absolute;
+    top: -8px; left: -8px;
+    right: 8px; bottom: 8px;
+    border: 1px solid var(--or);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .about-card-inner { position: relative; z-index: 1; }
+
+  .stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+  }
+
+  .stat {
+    text-align: center;
+    padding: 1.2rem;
+    background: var(--creme);
+    border-top: 2px solid var(--rouge);
+  }
+
+  .stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--rouge);
+    line-height: 1;
+    margin-bottom: 0.3rem;
+  }
+
+  .stat-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--brun);
+    opacity: 0.7;
+  }
+
+  .about-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--brun);
+    line-height: 1.7;
+    opacity: 0.85;
+    margin-bottom: 1.5rem;
+  }
+
+  /* OFFRES */
+  .offres {
+    background: var(--brun);
+    padding: 7rem 5rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .offres::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(to right, var(--rouge), var(--or), var(--vert-light));
+  }
+
+  .offres-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .offres-header .section-label { justify-content: center; color: var(--or-light); }
+  .offres-header .section-label::before { background: var(--or-light); }
+
+  .offres-header .section-title { color: var(--creme); }
+
+  .offres-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .offre-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(201, 168, 76, 0.2);
+    padding: 2.5rem 2rem;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .offre-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 2px;
+    background: var(--or);
+    transform: scaleX(0);
+    transition: transform 0.4s ease;
+  }
+
+  .offre-card:hover {
+    background: rgba(255,255,255,0.07);
+    transform: translateY(-4px);
+  }
+
+  .offre-card:hover::after { transform: scaleX(1); }
+
+  .offre-card.featured {
+    background: var(--rouge-deep);
+    border-color: var(--rouge);
+  }
+
+  .offre-card.featured::after { background: var(--or); }
+
+  .offre-badge {
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--or);
+    font-weight: 500;
+    margin-bottom: 1rem;
+    display: block;
+  }
+
+  .offre-card.featured .offre-badge { color: var(--or-light); }
+
+  .offre-emoji {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    display: block;
+  }
+
+  .offre-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--creme);
+    margin-bottom: 0.3rem;
+  }
+
+  .offre-price {
+    font-size: 2.2rem;
+    font-weight: 300;
+    color: var(--or);
+    margin-bottom: 1rem;
+    font-family: 'Cormorant Garamond', serif;
+  }
+
+  .offre-desc {
+    font-size: 0.85rem;
+    line-height: 1.8;
+    color: rgba(250, 246, 240, 0.65);
+    margin-bottom: 1.5rem;
+  }
+
+  .offre-features {
+    list-style: none;
+    margin-bottom: 2rem;
+  }
+
+  .offre-features li {
+    font-size: 0.8rem;
+    color: rgba(250, 246, 240, 0.75);
+    padding: 0.4rem 0;
+    border-bottom: 1px solid rgba(201, 168, 76, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .offre-features li::before {
+    content: '—';
+    color: var(--or);
+    font-size: 0.7rem;
+    flex-shrink: 0;
+  }
+
+  .offre-cta {
+    display: block;
+    text-align: center;
+    padding: 0.85rem 1.5rem;
+    border: 1px solid var(--or);
+    color: var(--or);
+    text-decoration: none;
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-weight: 500;
+    transition: all 0.3s;
+  }
+
+  .offre-cta:hover {
+    background: var(--or);
+    color: var(--brun);
+  }
+
+  .offre-card.featured .offre-cta {
+    background: var(--or);
+    color: var(--brun);
+  }
+
+  .offre-card.featured .offre-cta:hover {
+    background: var(--or-light);
+  }
+
+  /* TEMOIGNAGES */
+  .temoignages {
+    padding: 7rem 5rem;
+    background: var(--creme-dark);
+  }
+
+  .temoignages-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .temoignages-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .temoignage-card {
+    background: var(--blanc);
+    padding: 2.5rem;
+    border-left: 3px solid var(--rouge);
+    position: relative;
+  }
+
+  .stars {
+    color: var(--or);
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    letter-spacing: 0.1em;
+  }
+
+  .temoignage-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-style: italic;
+    line-height: 1.7;
+    color: var(--brun);
+    margin-bottom: 1.2rem;
+  }
+
+  .temoignage-highlight {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    font-style: italic;
+    color: var(--rouge);
+    font-weight: 600;
+    margin-bottom: 1rem;
+    display: block;
+  }
+
+  .temoignage-author {
+    font-size: 0.72rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--brun);
+    opacity: 0.6;
+    font-weight: 500;
+  }
+
+  /* CONTACT */
+  .contact {
+    padding: 7rem 5rem;
+    background: var(--creme);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: start;
+  }
+
+  .contact-info .section-title { margin-bottom: 1rem; }
+
+  .contact-desc {
+    font-size: 0.95rem;
+    line-height: 1.9;
+    color: var(--brun);
+    opacity: 0.8;
+    margin-bottom: 2rem;
+  }
+
+  .contact-note {
+    background: rgba(192, 57, 43, 0.06);
+    border-left: 2px solid var(--rouge);
+    padding: 1rem 1.2rem;
+    font-size: 0.82rem;
+    line-height: 1.7;
+    color: var(--brun);
+    opacity: 0.85;
+    margin-bottom: 2rem;
+  }
+
+  .contact-social {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .social-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--brun);
+    text-decoration: none;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+    font-weight: 500;
+  }
+
+  .social-link:hover { opacity: 1; color: var(--rouge); }
+
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .form-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--brun);
+    opacity: 0.6;
+    font-weight: 500;
+  }
+
+  .form-input, .form-select, .form-textarea {
+    padding: 0.9rem 1rem;
+    border: 1px solid rgba(61, 32, 20, 0.2);
+    background: var(--blanc);
+    font-family: 'Jost', sans-serif;
+    font-size: 0.88rem;
+    color: var(--brun);
+    outline: none;
+    transition: border-color 0.3s;
+    appearance: none;
+  }
+
+  .form-input:focus, .form-select:focus, .form-textarea:focus {
+    border-color: var(--rouge);
+  }
+
+  .form-textarea {
+    resize: vertical;
+    min-height: 120px;
+  }
+
+  .form-submit {
+    background: var(--rouge);
+    color: var(--blanc);
+    border: none;
+    padding: 1rem 2rem;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.3s;
+    margin-top: 0.5rem;
+  }
+
+  .form-submit:hover { background: var(--rouge-deep); }
+
+  .form-success {
+    display: none;
+    background: rgba(74, 124, 47, 0.1);
+    border: 1px solid var(--vert-light);
+    padding: 1.2rem;
+    font-size: 0.88rem;
+    color: var(--vert);
+    text-align: center;
+    line-height: 1.6;
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--brun);
+    padding: 2.5rem 5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--creme);
+  }
+
+  .footer-logo span { color: var(--or); }
+
+  .footer-text {
+    font-size: 0.72rem;
+    color: rgba(250, 246, 240, 0.4);
+    letter-spacing: 0.1em;
+  }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-text > * {
+    animation: fadeUp 0.8s ease forwards;
+    opacity: 0;
+  }
+
+  .hero-eyebrow { animation-delay: 0.1s; }
+  .hero-title { animation-delay: 0.25s; }
+  .hero-subtitle { animation-delay: 0.35s; }
+  .hero-desc { animation-delay: 0.45s; }
+  .hero-cta { animation-delay: 0.6s; }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { display: none; }
+    .hero { grid-template-columns: 1fr; min-height: auto; }
+    .hero-text { padding: 3rem 1.5rem 2rem; order: 2; }
+    .hero-image { height: 55vh; order: 1; }
+    .hero-image::after { background: linear-gradient(to top, var(--creme) 0%, transparent 30%); }
+    .about { grid-template-columns: 1fr; padding: 4rem 1.5rem; gap: 3rem; }
+    .offres { padding: 4rem 1.5rem; }
+    .offres-grid { grid-template-columns: 1fr; }
+  .offres-grid + div { grid-template-columns: 1fr !important; }
+    .temoignages { padding: 4rem 1.5rem; }
+    .temoignages-grid { grid-template-columns: 1fr; }
+    .contact { grid-template-columns: 1fr; padding: 4rem 1.5rem; gap: 3rem; }
+    footer { flex-direction: column; gap: 1rem; text-align: center; padding: 2rem 1.5rem; }
+    .citation-band { padding: 3rem 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">Marie <span>Bergé</span></div>
+  <ul class="nav-links">
+    <li><a href="#about">Mon histoire</a></li>
+    <li><a href="#offres">Mes offres</a></li>
+    <li><a href="#temoignages">Témoignages</a></li>
+    <li><a href="#contact">Me contacter</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-text">
+    <div class="hero-eyebrow">Bordeaux & En ligne</div>
+    <h1 class="hero-title">
+      <em>Incarne</em> qui<br>tu es vraiment
+      <span class="name">Marie Bergé</span>
+    </h1>
+    <p class="hero-subtitle">Conseillère en image & Confiance en soi</p>
+    <p class="hero-desc">
+      "Quand on sait qui on est, ça se voit."<br>
+      J'utilise l'image pour t'aider à te retrouver toi.
+    </p>
+    <a href="#offres" class="hero-cta"><span>Découvrir mes offres</span></a>
+
+  </div>
+
+</section>
+
+<!-- CITATION -->
+<div class="citation-band">
+  <p class="citation-text">"Je suis venue pour une séance de colorimétrie… et je suis repartie avec bien plus que ça. Un vrai boost de confiance, un regard complètement nouveau sur moi-même."</p>
+  <p class="citation-author">— Tatiana, cliente ★★★★★</p>
+</div>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="about-text">
+    <div class="section-label">Mon histoire</div>
+    <h2 class="section-title">J'ai été cette femme<br>qui <em>doutait</em></h2>
+    <p>Ce n'était pas un moment où tout était clair. Juste une femme qui a cru en moi quand personne d'autre ne le faisait.</p>
+    <p>Quand personne ne croyait en moi, une seule femme a suffi. Elle a vu quelque chose que je ne voyais pas encore moi-même. Et c'est elle qui m'a poussée vers la voie du mannequinat et de la photo.</p>
+    <p>De là, tout a commencé. Une rencontre, puis une autre. Une opportunité, puis une autre. Des portes qui s'ouvrent quand on ose avancer même sans certitude.</p>
+    <p>Aujourd'hui je suis à mon compte. Et ce que je fais chaque jour, c'est exactement ce que cette femme a fait pour moi.</p>
+    <p>J'aide les femmes à se sentir bien dans leur peau, dans leurs vêtements. À apprendre à se prioriser. À se voir telles qu'elles sont vraiment — belles, capables, légitimes.</p>
+    <p>Parce qu'il suffit parfois d'une seule personne qui croit en toi pour que tout change.</p>
+  </div>
+  <div class="about-visual">
+    <div class="about-card">
+      <div class="about-card-inner">
+        <p class="about-quote">"Elle ne se contente pas de te dire ta saison, elle t'explique, elle te guide, elle te met en lumière."</p>
+        <div class="stats">
+          <div class="stat">
+            <div class="stat-num">10+</div>
+            <div class="stat-label">Avis 5 étoiles</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">9</div>
+            <div class="stat-label">Ans d'expérience</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">1K+</div>
+            <div class="stat-label">Abonnées TikTok</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">∞</div>
+            <div class="stat-label">Transformations</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OFFRES -->
+<section class="offres" id="offres">
+  <div class="offres-header">
+    <div class="section-label">Ce que je propose</div>
+    <h2 class="section-title" style="color: var(--creme);">Mes <em style="color: var(--rouge-light);">offres</em></h2>
+  </div>
+  <div class="offres-grid">
+
+    <div class="offre-card">
+      <span class="offre-badge">Découverte</span>
+      <span class="offre-emoji">✨</span>
+      <div class="offre-name">L'Étincelle</div>
+      <div class="offre-price">90€</div>
+      <p class="offre-desc">Pour commencer à te voir autrement. Une première séance pour allumer la lumière.</p>
+      <ul class="offre-features">
+        <li>Analyse colorimétrie complète</li>
+        <li>Découverte de ton style personnel</li>
+        <li>Durée : 1h30</li>
+        <li>Bordeaux ou en ligne</li>
+      </ul>
+      <a href="#contact" class="offre-cta">Me contacter</a>
+    </div>
+
+    <div class="offre-card">
+      <span class="offre-badge">Populaire</span>
+      <span class="offre-emoji">🌟</span>
+      <div class="offre-name">La Révélation</div>
+      <div class="offre-price">247€</div>
+      <p class="offre-desc">Pour repartir avec un plan concret et un regard transformé sur toi-même.</p>
+      <ul class="offre-features">
+        <li>Colorimétrie + morphologie</li>
+        <li>Guide shopping personnalisé</li>
+        <li>Durée : 3h</li>
+        <li>Bordeaux ou en ligne</li>
+      </ul>
+      <a href="#contact" class="offre-cta">Me contacter</a>
+    </div>
+
+    <div class="offre-card featured">
+      <span class="offre-badge">⭐ Signature</span>
+      <span class="offre-emoji">💫</span>
+      <div class="offre-name">La Transformation</div>
+      <div class="offre-price">497€</div>
+      <p class="offre-desc">L'accompagnement complet pour changer durablement ton rapport à toi-même.</p>
+      <ul class="offre-features">
+        <li>Colorimétrie + morphologie</li>
+        <li>Shopping guidé ensemble</li>
+        <li>Suivi personnalisé 1 mois</li>
+        <li>Bordeaux & en ligne</li>
+      </ul>
+      <a href="#contact" class="offre-cta">Me contacter</a>
+    </div>
+
+  </div>
+
+  <!-- OFFRES SPÉCIALES -->
+  <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; max-width:1100px; margin:1.5rem auto 0;">
+
+    <div class="offre-card" style="border-color:rgba(74,124,47,0.4);">
+      <span class="offre-badge" style="color:#6aad4a;">Groupe</span>
+      <span class="offre-emoji">🌿</span>
+      <div class="offre-name">Atelier Colorimétrie</div>
+      <div class="offre-price" style="font-size:1.4rem; margin-bottom:0.3rem;">Sur devis</div>
+      <p style="font-size:0.72rem; color:var(--or-light); letter-spacing:0.1em; margin-bottom:1rem;">À partir de 4 personnes</p>
+      <p class="offre-desc">Un moment unique et convivial en groupe autour de la colorimétrie. Idéal pour une team building, un enterrement de vie de jeune fille, un cercle d'amies ou un événement d'entreprise.</p>
+      <ul class="offre-features">
+        <li>Séance colorimétrie pour chaque participante</li>
+        <li>Moment convivial et bienveillant</li>
+        <li>Lieu à définir ensemble</li>
+        <li>Tarif selon le nombre de personnes</li>
+      </ul>
+      <a href="#contact" class="offre-cta" style="border-color:#4a7c2f; color:#6aad4a;">Demander un devis</a>
+    </div>
+
+    <div class="offre-card" style="border-color:rgba(201,168,76,0.5);">
+      <span class="offre-badge">Cadeau</span>
+      <span class="offre-emoji">🎁</span>
+      <div class="offre-name">Bon Cadeau</div>
+      <div class="offre-price" style="font-size:1.4rem; margin-bottom:0.3rem;">Au choix</div>
+      <p style="font-size:0.72rem; color:var(--or-light); letter-spacing:0.1em; margin-bottom:1rem;">Offrir une séance, c'est offrir la confiance</p>
+      <p class="offre-desc">Tu veux offrir un moment rare à quelqu'un que tu aimes ? Une amie, une sœur, une maman. Un bon cadeau pour la séance de ton choix, envoyé directement après échange.</p>
+      <ul class="offre-features">
+        <li>Séance L'Étincelle, La Révélation ou La Transformation</li>
+        <li>Bon personnalisé au prénom de la personne</li>
+        <li>Valable 6 mois</li>
+        <li>Me contacter pour le finaliser</li>
+      </ul>
+      <a href="#contact" class="offre-cta">Offrir une séance</a>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- TÉMOIGNAGES -->
+<section class="temoignages" id="temoignages">
+  <div class="temoignages-header">
+    <div class="section-label" style="justify-content:center;">Elles témoignent</div>
+    <h2 class="section-title">Ce qu'elles ont <em>vécu</em></h2>
+  </div>
+  <div class="temoignages-grid">
+    <div class="temoignage-card">
+      <div class="stars">★★★★★</div>
+      <p class="temoignage-text">Je suis venue pour une séance de colorimétrie… et je suis repartie avec bien plus que ça.</p>
+      <span class="temoignage-highlight">"Je me suis sentie belle, alignée, et ça… ça n'a pas de prix."</span>
+      <p class="temoignage-text" style="font-size:0.9rem;">C'est bien plus qu'une prestation, c'est un vrai moment pour soi.</p>
+      <div class="temoignage-author">— Tatiana P. · Google</div>
+    </div>
+    <div class="temoignage-card">
+      <div class="stars">★★★★★</div>
+      <p class="temoignage-text">Ce test de colorimétrie était génial et m'a aidée pour choisir et tenter de nouvelles teintes.</p>
+      <span class="temoignage-highlight">"Objectif maintenant : gagner encore plus en confiance, oser et se faire plaisir !"</span>
+      <div class="temoignage-author">— Maeva L. · Google</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="contact-info">
+    <div class="section-label">Prendre contact</div>
+    <h2 class="section-title">Parlons de <em>toi</em></h2>
+    <p class="contact-desc">Chaque accompagnement est unique. On échange d'abord ensemble pour trouver la date et la formule qui te conviennent.</p>
+    <div class="contact-note">
+      📍 Je reçois à <strong>Bordeaux</strong> et propose également des séances <strong>en ligne</strong>.<br><br>
+      💳 Un lien de paiement sera envoyé dès validation de la date. <strong>Règlement uniquement par virement bancaire</strong> pour bloquer le créneau.
+    </div>
+    <div style="margin-bottom:1.8rem;">
+      <div style="font-size:0.68rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--brun); opacity:0.45; font-weight:500; margin-bottom:0.6rem;">Me contacter</div>
+      <a href="mailto:berge.marie@hotmail.com" class="social-link" style="font-size:0.88rem; opacity:1; color:var(--rouge); font-weight:500;">✉ berge.marie@hotmail.com</a>
+    </div>
+    <div style="margin-bottom:1.8rem;">
+      <div style="font-size:0.68rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--brun); opacity:0.45; font-weight:500; margin-bottom:0.6rem;">Me retrouver sur</div>
+      <div class="contact-social" style="flex-direction:column; align-items:flex-start; gap:0.6rem;">
+        <a href="https://www.tiktok.com/@marieb_conseillere.image" target="_blank" class="social-link">↗ TikTok</a>
+        <a href="https://www.instagram.com/marieberge_94?igsh=anEwYXdvNTcxeWFh" target="_blank" class="social-link">↗ Instagram</a>
+      </div>
+    </div>
+    <div>
+      <div style="font-size:0.68rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--brun); opacity:0.45; font-weight:500; margin-bottom:0.6rem;">Découvrir les avis de celles qui en parlent le mieux</div>
+      <a href="https://maps.app.goo.gl/fSw8TzdpoFj93Uws9?g_st=ic" target="_blank" class="social-link">↗ Avis Google ★★★★★</a>
+    </div>
+  </div>
+
+  <div>
+    <form class="contact-form" onsubmit="handleSubmit(event)">
+      <div class="form-group">
+        <label class="form-label">Ton prénom</label>
+        <input type="text" class="form-input" placeholder="Marie" required>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Ton email</label>
+        <input type="email" class="form-input" placeholder="marie@email.com" required>
+      </div>
+      <div class="form-group">
+        <label class="form-label">L'offre qui t'intéresse</label>
+        <select class="form-select form-input">
+          <option value="">Choisir une offre...</option>
+          <option>L'Étincelle — 90€</option>
+          <option>La Révélation — 247€</option>
+          <option>La Transformation — 497€</option>
+          <option>Atelier Colorimétrie — Sur devis</option>
+          <option>Bon Cadeau</option>
+          <option>Je ne sais pas encore</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Ton message</label>
+        <textarea class="form-textarea" placeholder="Dis-moi où tu en es, ce que tu traverses, ce que tu cherches…" required></textarea>
+      </div>
+      <button type="submit" class="form-submit">Envoyer mon message</button>
+    </form>
+    <div class="form-success" id="successMsg">
+      ✨ Merci ! Marie reviendra vers toi très bientôt pour convenir d'une date ensemble.
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Marie <span>Bergé</span></div>
+  <div class="footer-text">Conseillère en image & Confiance en soi · Bordeaux</div>
+</footer>
+
+<script>
+function handleSubmit(e) {
+  e.preventDefault();
+  e.target.style.display = 'none';
+  document.getElementById('successMsg').style.display = 'block';
+}
+
+// Smooth scroll for all anchor links
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+});
+</script>
+
+</body>
+</html>
